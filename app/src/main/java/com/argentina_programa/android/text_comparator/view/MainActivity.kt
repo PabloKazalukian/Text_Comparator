@@ -9,11 +9,11 @@ import com.argentina_programa.android.text_comparator.model.Text
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding;
-    private val mainViewModel: MainViewModel by viewModels();
+    private lateinit var binding: ActivityMainBinding
+    private val mainViewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(layoutInflater);
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root);
 
         binding.buttonCompare?.setOnClickListener{
@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.resultText.observe(this, Observer {result ->
             binding.result?.text = result;
-        });
+        })
+
     }
 }
